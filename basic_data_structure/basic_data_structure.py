@@ -1,6 +1,6 @@
 import time
 from array import array
-from random import random
+from random import random, randrange
 
 
 # вставить item в конце массива
@@ -126,6 +126,47 @@ def factor_array(total, factor):
     print(f'Factor_array {total} -> {(time.process_time() - start):.5f} seconds')
 
 
+# Функция вставляет элемент с приоритетом в очередь
+def insert_to_queue(arr: list, priority, element):
+    size = len(arr)
+    if size == 0:
+        arr.append([priority, element])
+    else:
+        arr.append([priority, element])
+        arr = sorted(arr)
+    return arr
+
+
+# Удаление из очереди элемента
+def delete_from_queue(arr, element):
+    size = len(arr)
+    i = 0
+    for i in range(size):
+        if element == arr[i]:
+            break
+    arr.remove(arr[i])
+    return arr
+
+
+# Очередь с приоритетом
+def priority_queue(total):
+    arr = []
+    start = time.process_time()
+    for i in range(total):
+        arr = insert_to_queue(arr, randrange(1, 25, 1), randrange(1, total, 1))
+    arr = sorted(arr)
+    print(f'Priority_queue {total} -> {(time.process_time() - start):.5f} seconds')
+    print(f'Первые 5 элементов очереди', arr[0:5])
+    print(f'Длина очереди', len(arr))
+    arr = insert_to_queue(arr, 1, 13)
+    print(f'Первые 5 элементов очереди после вставки', arr[0:5])
+    print(f'Длина очереди', len(arr))
+    arr = delete_from_queue(arr, [1, 13])
+    print(f'Первые 5 элементов очереди после удаления', arr[0:5])
+    print(f'Длина очереди', len(arr))
+
+
 single_array(5_000)
 vector_array(1_000_000, 10)
 factor_array(1_000_000, 1.8)
+priority_queue(10_000)
