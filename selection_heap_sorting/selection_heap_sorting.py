@@ -64,13 +64,13 @@ def heapify(array, root, n):
     global compare
     global assignment
     x = root
-    l = 2 * x + 1  # индекс левого элемента
-    r = 2 * x + 2  # индекс правого элемента
-    if l < n and array[l] > array[x]:
-        x = l
+    left = 2 * x + 1  # индекс левого элемента
+    right = 2 * x + 2  # индекс правого элемента
+    if left < n and array[left] > array[x]:
+        x = left
         compare += 1
-    if r < n and array[r] > array[x]:
-        x = r
+    if right < n and array[right] > array[x]:
+        x = right
         compare += 1
     if x == root:
         return
