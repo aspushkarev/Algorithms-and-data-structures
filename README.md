@@ -8,3 +8,4 @@ My solutions
 5. bitwise_arithmetic. Работа с Битовыми операциями. Генерирование битовой маски по заданным правилам;
 6. simple_sorting. Сортировка массива разными способами: алгоритм BubbleSort, алгоритм InsertionSort, алгоритм ShellSort;
 7. selection_heap_sorting. Реализация алгоритма SelectionSort, HeapSort;
+8. quick_merge_external_sorting. Реализация алгоритмов сортировки QuickSort, MergeSort;
