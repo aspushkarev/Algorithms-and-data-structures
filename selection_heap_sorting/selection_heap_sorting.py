@@ -35,7 +35,7 @@ def selection_sort(array, n):
                 maximum = i
                 compare += 1
         array[maximum], array[j] = array[j], array[maximum]
-        assignment += 3
+        assignment += 2
     return array, compare, assignment
 
 
@@ -61,22 +61,29 @@ def heap_sort(array, n):
 
 
 def heapify(array, root, n):
+    """
+    Алгоритм формирования кучи или пирамиды
+    :param array: Массив для сортировки
+    :param root: корневой элемент кучи
+    :param n: Размер массива до которого будем смотреть кучу
+    :return: Массив или правильная куча
+    """
     global compare
     global assignment
-    x = root
-    left = 2 * x + 1  # индекс левого элемента
-    right = 2 * x + 2  # индекс правого элемента
-    if left < n and array[left] > array[x]:
-        x = left
+    x = maximum = root   # считаем, что максимальный элемент находится в корне
+    left = 2 * x + 1     # индекс левого элемента в кучи
+    right = 2 * x + 2    # индекс правого элемента в кучи
+    if left < n and array[left] > array[maximum]:
+        maximum = left
         compare += 1
-    if right < n and array[right] > array[x]:
-        x = right
+    if right < n and array[right] > array[maximum]:
+        maximum = right
         compare += 1
-    if x == root:
+    if maximum == root:
         return
-    array[root], array[x] = array[x], array[root]
-    assignment += 1
-    heapify(array, x, n)
+    array[root], array[maximum] = array[maximum], array[root]
+    assignment += 2
+    heapify(array, maximum, n)
     return array
 
 
