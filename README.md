@@ -10,3 +10,4 @@ My solutions
 7. selection_heap_sorting. Реализация алгоритма SelectionSort, HeapSort;
 8. quick_merge_external_sorting. Реализация алгоритмов сортировки QuickSort, MergeSort;
 9. bucket_counting_radix_sorting. Реализация алгоритма сортировки подсчётом CountingSort, алгоритма поразрядной сортировки RadixSort и алгоритма блочной сортировки BucketSort;
+10. hash_map. Создание хэш-функции, вычисление хэш-значения для строк и добавление данных в хеш-таблицу
