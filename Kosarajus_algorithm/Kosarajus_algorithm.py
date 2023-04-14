@@ -1,4 +1,4 @@
-# Алгоритм Касарайю
+# Алгоритм Косарайю
 # 1. Инвертируем дуги исходного ориентированного графа.
 # 2. Запускаем поиск в глубину на этом обращённом графе,
 # запоминая, в каком порядке выходили из вершин.
@@ -22,7 +22,7 @@ class Graph:
     # Метод для прохода графа в глубину
     def dfs(self, v, visited):
         visited[v] = True
-        # print(v)
+        print(v, end=" ")
         for vertex in self.graph[v]:
             if visited[vertex] is False:
                 self.dfs(vertex, visited)
@@ -59,14 +59,13 @@ class Graph:
         # Снова маркеруем все вершины как непосещённые
         visited = [False] * self.vertices
 
+        print('Strongly connected components in the graph:')
         # Достаём вершины из стека
-        component = []
         while stack:
             vertex = stack.pop()
             if visited[vertex] is False:
                 rg.dfs(vertex, visited)
-                component.append(vertex)
-        print(f'Strongly connected components in the graph:\n{component}')
+                print()
 
 
 if __name__ == "__main__":
